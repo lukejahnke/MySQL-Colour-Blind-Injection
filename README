@@ -1,0 +1,4 @@
+-You need MySQL running locally
+-rows variable (line 144) is the rows in their default order (ORDER BY NULL)
+-sql variable (line 154) is the query you want to see the results of
+-no support for paging yet
