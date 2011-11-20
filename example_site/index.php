@@ -11,9 +11,10 @@ if( !$connectResult ) die('Could not connect');
 $selectResult = mysql_select_db($mysqlDatabase);
 if( !$selectResult ) die('Could not select DB');
 
-$sql = 'SELECT *
-FROM `user`
-' . (!empty($_GET['order']) ? 'ORDER BY ' . $_GET['order'] : '');
+$sql = 'SELECT * FROM `user`';
+if( !empty($_GET['order']) ) {
+  $sql .= ' ORDER BY ' . $_GET['order'];
+}
 
 $result = mysql_query($sql);
 if( !$result ) die(mysql_error());

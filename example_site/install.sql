@@ -1,5 +1,4 @@
-# To install, simply run: mysql < install.sql
-
+# use reinstall.sh to run
 CREATE DATABASE `orderby_injection` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE `orderby_injection`.`user` (
